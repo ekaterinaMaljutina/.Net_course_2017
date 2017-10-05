@@ -16,7 +16,7 @@ namespace Trie_HW
 
         public bool Add(string element)
         {
-            if (Contains(element))
+            if (element == null ||  Contains(element))
             {
                 return false;
             }

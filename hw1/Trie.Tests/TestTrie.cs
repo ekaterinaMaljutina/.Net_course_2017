@@ -146,5 +146,34 @@ namespace Test
             Assert.True(trie.Remove(words[0]));
             Assert.AreEqual(words.Length - 4, trie.Size());
         }
+
+        [Test]
+        public void SetNullValue()
+        {
+            var trie = new Trie();
+            trie.Add(null);
+            Assert.AreEqual(0, trie.Size());
+        }
+
+        [Test]
+        public void RemoveNullValue()
+        {
+            var trie = new Trie();
+            trie.Add("a");
+            Assert.AreEqual(1, trie.Size());
+
+            Assert.False(trie.Remove(null));
+        }
+
+        [Test]
+        public void ContainsNullValue()
+        {
+            var trie = new Trie();
+            trie.Add("a");
+            Assert.AreEqual(1, trie.Size());
+
+            Assert.False(trie.Contains(null));
+        }
+            
     }
 }
