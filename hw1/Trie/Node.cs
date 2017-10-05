@@ -6,8 +6,8 @@ namespace Utils
     {
         private readonly Dictionary<char, TrieNode> _next = new Dictionary<char, TrieNode>();
 
-        private int _sizePrefix;
-        private bool _isTerminate;
+        private int _sizePrefix { set; get; }
+        private bool _isTerminate { set; get; }
 
         public bool InsertNode(TrieNode root, string prefix)
         {

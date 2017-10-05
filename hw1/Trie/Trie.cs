@@ -7,7 +7,12 @@ namespace Trie_HW
     public class Trie : ITrie
     {
         private readonly TrieNode _root = new TrieNode();
-        private int _size = 0;
+        private int _size { set; get; }
+
+        public Trie()
+        {
+            _size = 0;
+        }
 
         public bool Add(string element)
         {
