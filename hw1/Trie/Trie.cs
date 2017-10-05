@@ -15,14 +15,11 @@ namespace Trie_HW
             {
                 return false;
             }
-            _size++;
+            ++_size;
             return _root.InsertNode(_root, element);
         }
 
-        public bool Contains(string element)
-        {
-            return _root.CheckElemInTree(element);
-        }
+        public bool Contains(string element) => _root.CheckElemInTree(element);
 
         public bool Remove(string element)
         {
@@ -30,19 +27,13 @@ namespace Trie_HW
             {
                 return false;
             }
-            _size--;
+            --_size;
             return _root.DeleteNode(_root, element);
         }
 
-        public int Size()
-        {
-            return _size;
-        }
+        public int Size() => _size;
 
-        public int HowManyStartsWithPrefix(string prefix)
-        {
-            return _root.HowManyPrefix(prefix);
-        }
+        public int HowManyStartsWithPrefix(string prefix) => _root.HowManyPrefix(prefix);
 
     }
 }
