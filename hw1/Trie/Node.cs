@@ -1,111 +1,130 @@
-namespace node
+using System.Collections.Generic;
+
+namespace Utils
 {
-    public class Node
+    public class TrieNode
     {
-        private const int SIZE = 'Z' + 'z' - 'A' - 'a' + 2;
+        private readonly Dictionary<char, TrieNode> _next = new Dictionary<char, TrieNode>();
 
-        private Node[] next = new Node[SIZE];
-        private int counter;
-        private bool isTerminate;
+        private int _sizePrefix;
+        private bool _isTerminate;
 
-        public bool checkElemInTree(string str)
+        public int Count()
         {
-            Node node = findNode(str);
-            return node != null && node.isTerminate;
+            return _next.Count;
         }
 
-        public bool insertNode(Node root, string str)
+        public bool CheckElemInTree(string prefix)
         {
-            Node thisNode = root;
+            if (prefix == null)
+            {
+                return false;
+            }
+            int index;
+            var node = FindNode(prefix, out index);
+            return index == prefix.Length && node != null ? node._isTerminate : false;
+        }
+
+        public bool InsertNode(TrieNode root, string prefix)
+        {
+            if (prefix == null)
+            {
+                return false;
+            }
+            var thisNode = root;
             thisNode.succCounter();
 
-            for (int i = 0; i < str.Length; i++)
-            {
-                if (!thisNode.checkElemInChild(str[i]))
+            foreach (var itemPrefix in prefix)
+            {                
+                if (!thisNode.CheckElemInChild(itemPrefix))
                 {
-                    thisNode.setChild(str[i]);
+                    thisNode.SetChild(itemPrefix);
                 }
-                thisNode = thisNode.getChild(str[i]);
+                thisNode = thisNode.GetChild(itemPrefix);
                 thisNode.succCounter();
+                
             }
-            thisNode.isTerminate = true;
+            thisNode._isTerminate = true;
             return true;
         }
 
-        public bool deleteNode(Node root, string str)
+        public bool DeleteNode(TrieNode root, string prefix)
         {
-            Node thisNode = root;
+            if (prefix == null)
+            {
+                return false;
+            }
+            var thisNode = root;
             thisNode.predCounter();
 
-            for (int i = 0; i < str.Length; i++)
+            foreach (var itemPrefix in prefix)
             {
-                thisNode = thisNode.getChild(str[i]);
+                var perant = thisNode;
+                thisNode = thisNode.GetChild(itemPrefix);
                 thisNode.predCounter();
 
-                if (thisNode.counter == 0)
+                if (thisNode.IsEmpty())
                 {
-                    thisNode.delChild(str[i]);
+                    perant.DelChild(itemPrefix);
                     return true;
                 }
             }
-            thisNode.isTerminate = false;
+            thisNode._isTerminate = false;
             return true;
         }
 
-        public int howManyPrefix(string str)
+        public int HowManyPrefix(string prefix)
         {
-            Node node = findNode(str);
-            if (node == null)
+            int index;
+            var node = FindNode(prefix, out index);
+            if (node == null || index != prefix.Length)
             {
                 return 0;
             }
-            return node.counter;
-        }
-        private int index(char element)
-        {
-            if (!char.IsLower(element))
-            {
-                return element - 'A' + 'z' - 'a' + 1;
-            }
-            return element - 'a';
+            return node._sizePrefix;
         }
 
-        private bool checkElemInChild(char element)
+        private bool IsEmpty()
         {
-            return next[index(element)] != null;
-        }
-
-        private Node getChild(char element)
-        {
-            return next[index(element)];
-        }
-
-        private void setChild(char element)
-        {
-            next[index(element)] = new Node();
-        }
-
-        private void delChild(char element)
-        {
-            next[index(element)] = null;
+            return Count() == 0;
         }
 
         private void succCounter()
         {
-            counter++;
+            ++_sizePrefix;
         }
 
         private void predCounter()
         {
-            counter--;
+            --_sizePrefix;
         }
 
-        private Node findNode(string str)
+        private bool CheckElemInChild(char element)
         {
-            Node thisNode = this;
-            for (int i = 0; i < str.Length && thisNode != null; i++)
+            return GetChild(element) != null;
+        }
+
+        private TrieNode  GetChild(char element)
+        {
+            return _next.ContainsKey(element) ? _next[element] : null; 
+        }
+
+        private void SetChild(char element)
+        {
+            _next.Add(element, new TrieNode());
+        }
+
+        private void DelChild(char element)
+        {
+            _next.Remove(element);
+        }
+
+        private TrieNode FindNode(string str, out int indexLast)
+        {
+            var thisNode = this;
+            for (indexLast = 0; indexLast < str.Length && thisNode != null; ++indexLast)
             {
-                thisNode = thisNode.getChild(str[i]);
+                thisNode = thisNode.GetChild(str[indexLast]);
             }
             return thisNode;
         }

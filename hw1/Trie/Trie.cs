@@ -1,24 +1,47 @@
 ﻿using System;
+using Utils;
+using ITrie_HW;
 
-namespace trie
+namespace Trie_HW
 {
-    public interface Trie
+    public class Trie : ITrie
     {
-        /// Expected complexity: O(|element|)
-        /// Returns true if this set did not already contain the specified element
-        bool Add(string element);
+        private readonly TrieNode _root = new TrieNode();
+        private int _size = 0;
 
-        /// Expected complexity: O(|element|)
-        bool Contains(string element);
+        public bool Add(string element)
+        {
+            if (Contains(element))
+            {
+                return false;
+            }
+            _size++;
+            return _root.InsertNode(_root, element);
+        }
 
-        /// Expected complexity: O(|element|)
-        /// Returns true if this set contained the specified element
-        bool Remove(string element);
+        public bool Contains(string element)
+        {
+            return _root.CheckElemInTree(element);
+        }
 
-        /// Expected complexity: O(1)
-        int Size();
+        public bool Remove(string element)
+        {
+            if (!Contains(element))
+            {
+                return false;
+            }
+            _size--;
+            return _root.DeleteNode(_root, element);
+        }
+        public int Size()
+        {
+            return _size;
+        }
 
-        /// Expected complexity: O(|prefix|)
-        int HowManyStartsWithPrefix(string prefix);
+        public int HowManyStartsWithPrefix(string prefix)
+        {
+            return _root.HowManyPrefix(prefix);
+        }
+
     }
 }
