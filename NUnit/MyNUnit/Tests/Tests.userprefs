@@ -1,0 +1,20 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="BeforeClassMethodTest/TestBeforeClassMethod.cs">
+    <Files>
+      <File FileName="TestMethodTest/TestMethodTest.cs" Line="1" Column="1" />
+      <File FileName="TestDll/TestWithField.cs" Line="38" Column="1" />
+      <File FileName="TestDll/TestPerform.cs" Line="83" Column="21" />
+      <File FileName="BeforeClassMethodTest/TestBeforeClassMethod.cs" Line="8" Column="16" />
+      <File FileName="BeforeTestMethod/TestBeforeMethod.cs" Line="8" Column="16" />
+      <File FileName="BeforeTestMethod/TestManyBeforeMethod.cs" Line="10" Column="25" />
+      <File FileName="AfterTestMethod/TestManyAfterMethod.cs" Line="9" Column="39" />
+      <File FileName="AfterTestMethod/TestAfterMethod.cs" Line="8" Column="16" />
+      <File FileName="AfterClassMethodTest/TestAfterClassMethod.cs" Line="9" Column="25" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
