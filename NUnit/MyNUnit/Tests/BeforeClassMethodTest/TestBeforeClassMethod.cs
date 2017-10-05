@@ -1,8 +1,11 @@
 ﻿using System;
-using MyUnit.CustomAttributes.Utils;
+using MyUnit.Annotation;
+using MyUnit.MyAssert;
 
 namespace BeforeClassMethodTest
 {
+    using Assert = MyAssert;
+
     public class TestBeforeClassMethod
     {
         private Object _value = null;
@@ -25,7 +28,7 @@ namespace BeforeClassMethodTest
         [Test]
         public void testMethod()
         {
-            Assert.isTrue((_value as Test) != null);
+            Assert.NotEqual(null, _value as Test);
         }
     }
 }

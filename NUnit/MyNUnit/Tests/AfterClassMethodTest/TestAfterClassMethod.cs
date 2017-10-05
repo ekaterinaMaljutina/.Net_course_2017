@@ -1,21 +1,26 @@
 ﻿using System;
-using MyUnit.CustomAttributes.Utils;
+using MyUnit.Annotation;
+using MyUnit.MyAssert;
 
 namespace AfterClassMethodTest
 {
+    using Assert = MyAssert;
+
     public class TestAfterClassMethod
     {
 
         private Object _value = null;
 
         [BeforeClass]
-        public void BeforeClassMethod() {
+        public void BeforeClassMethod()
+        {
             Assert.Equal(null, _value);
             _value = new Test();
         }
 
         [Before]
-        public void BeforeMethod() {
+        public void BeforeMethod()
+        {
             if (_value == null)
             {
                 _value = new Random();
@@ -23,20 +28,23 @@ namespace AfterClassMethodTest
         }
 
         [Test]
-        public void TestMethod() {
-            Assert.isTrue( (_value as Test) != null);
+        public void TestMethod()
+        {
+            Assert.NotEqual(null, _value as Test);
             _value = new Random();
         }
 
         [After] 
-        public void AfterTest() {
-            Assert.isTrue( (_value as Random) != null);
+        public void AfterTest()
+        {
+            Assert.NotEqual(null, _value as Random);
             _value = new Test();
         }
 
         [AfterClass]
-        public void AfterClassMethod() {
-            Assert.isTrue( (_value as Test) != null);
+        public void AfterClassMethod()
+        {
+            Assert.NotEqual(null, _value as Test);
         }
 
 

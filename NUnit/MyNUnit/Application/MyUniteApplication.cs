@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using MyUnit.CustomAttributes;
-
 
 namespace MyUnit.Application
 {
@@ -14,7 +14,9 @@ namespace MyUnit.Application
                 Console.WriteLine (" not path to folder");
                 return;
             }
-            foreach (string file in Directory.GetFiles(@args[0], "*.dll")) {
+            var files = Directory.GetFiles (args[0], "*.*", SearchOption.TopDirectoryOnly)
+                .Where (s => s.EndsWith (".dll") || s.EndsWith (".exe"));
+            foreach (string file in files) {
                 loadAssembly.ExecuteTest (file);
             }
         }

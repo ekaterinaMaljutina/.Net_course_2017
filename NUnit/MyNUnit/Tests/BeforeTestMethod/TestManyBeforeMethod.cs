@@ -1,8 +1,11 @@
 ﻿using System;
-using MyUnit.CustomAttributes.Utils;
+using MyUnit.Annotation;
+using MyUnit.MyAssert;
 
 namespace BeforeTestMethod
 {
+    using Assert = MyAssert;
+    
     public class TestManyBeforeMethod
     {
         private static string VALUE_BEFORE = "before run";

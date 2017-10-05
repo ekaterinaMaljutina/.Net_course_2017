@@ -1,8 +1,11 @@
 ﻿using System;
-using MyUnit.CustomAttributes.Utils;
+using MyUnit.Annotation;
+using MyUnit.MyAssert;
 
 namespace AfterTestMethod
 {
+    using Assert = MyAssert;
+
     public class TestAfterMethod
     {
         private int _value = 0;

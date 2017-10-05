@@ -1,29 +1,36 @@
 ﻿using System;
-using MyUnit.CustomAttributes.Utils;
+using MyUnit.Annotation;
+using MyUnit.MyAssert;
 
 namespace TestMethodTest
 {
+    using Assert = MyAssert;
+
     public class TestMethodTest
     {
         [Test]
-        public void simpleTestMethod() {
+        public void simpleTestMethod()
+        {
             Console.WriteLine(@"RUN method simpleTestMethod");
             Assert.isTrue(true);
         }
 
         [Test]
-        public void simpleSecondTestMethod() {
+        public void simpleSecondTestMethod()
+        {
             Console.WriteLine(@"RUN method simpleSecondTestMethod");
         }
 
         [Test(Ignore = " Simple ingore test")]
-        public void simpleIgnoreTest() {
+        public void simpleIgnoreTest()
+        {
             Assert.isTrue(false);
             Console.WriteLine(@" RUN IGNORE test");
         }
 
-        [Test(Expected= "ArgumentNullException")]
-        public void expectedTest() {
+        [Test(Expected = "ArgumentNullException")]
+        public void expectedTest()
+        {
             throw new ArgumentNullException();
         }
             
