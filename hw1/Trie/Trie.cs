@@ -33,6 +33,7 @@ namespace Trie_HW
             _size--;
             return _root.DeleteNode(_root, element);
         }
+
         public int Size()
         {
             return _size;

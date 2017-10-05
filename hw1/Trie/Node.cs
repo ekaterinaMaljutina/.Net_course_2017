@@ -9,22 +9,6 @@ namespace Utils
         private int _sizePrefix;
         private bool _isTerminate;
 
-        public int Count()
-        {
-            return _next.Count;
-        }
-
-        public bool CheckElemInTree(string prefix)
-        {
-            if (prefix == null)
-            {
-                return false;
-            }
-            int index;
-            var node = FindNode(prefix, out index);
-            return index == prefix.Length && node != null ? node._isTerminate : false;
-        }
-
         public bool InsertNode(TrieNode root, string prefix)
         {
             if (prefix == null)
@@ -32,7 +16,7 @@ namespace Utils
                 return false;
             }
             var thisNode = root;
-            thisNode.succCounter();
+            thisNode.SuccCounter();
 
             foreach (var itemPrefix in prefix)
             {                
@@ -41,7 +25,7 @@ namespace Utils
                     thisNode.SetChild(itemPrefix);
                 }
                 thisNode = thisNode.GetChild(itemPrefix);
-                thisNode.succCounter();
+                thisNode.SuccCounter();
                 
             }
             thisNode._isTerminate = true;
@@ -55,17 +39,17 @@ namespace Utils
                 return false;
             }
             var thisNode = root;
-            thisNode.predCounter();
+            thisNode.PredCounter();
 
             foreach (var itemPrefix in prefix)
             {
-                var perant = thisNode;
+                var parent = thisNode;
                 thisNode = thisNode.GetChild(itemPrefix);
-                thisNode.predCounter();
+                thisNode.PredCounter();
 
                 if (thisNode.IsEmpty())
                 {
-                    perant.DelChild(itemPrefix);
+                    parent.DelChild(itemPrefix);
                     return true;
                 }
             }
@@ -73,50 +57,22 @@ namespace Utils
             return true;
         }
 
+        public bool CheckElemInTree(string prefix)
+        {
+            if (prefix == null)
+            {
+                return false;
+            }
+            int index;
+            var node = FindNode(prefix, out index);
+            return index == prefix.Length && node != null ? node._isTerminate : false;
+        }
+
         public int HowManyPrefix(string prefix)
         {
             int index;
             var node = FindNode(prefix, out index);
-            if (node == null || index != prefix.Length)
-            {
-                return 0;
-            }
-            return node._sizePrefix;
-        }
-
-        private bool IsEmpty()
-        {
-            return Count() == 0;
-        }
-
-        private void succCounter()
-        {
-            ++_sizePrefix;
-        }
-
-        private void predCounter()
-        {
-            --_sizePrefix;
-        }
-
-        private bool CheckElemInChild(char element)
-        {
-            return GetChild(element) != null;
-        }
-
-        private TrieNode  GetChild(char element)
-        {
-            return _next.ContainsKey(element) ? _next[element] : null; 
-        }
-
-        private void SetChild(char element)
-        {
-            _next.Add(element, new TrieNode());
-        }
-
-        private void DelChild(char element)
-        {
-            _next.Remove(element);
+            return node == null || index != prefix.Length ? 0 : node._sizePrefix;
         }
 
         private TrieNode FindNode(string str, out int indexLast)
@@ -129,5 +85,20 @@ namespace Utils
             return thisNode;
         }
 
+        private int Count() => _next.Count;
+
+        private bool IsEmpty() => Count() == 0;
+
+        private void SuccCounter() => ++_sizePrefix;
+
+        private void PredCounter() =>  --_sizePrefix;
+
+        private bool CheckElemInChild(char element) => GetChild(element) != null;
+
+        private TrieNode GetChild(char element) =>  _next.ContainsKey(element) ? _next[element] : null;
+
+        private void SetChild(char element) => _next.Add(element, new TrieNode());
+
+        private void DelChild(char element) => _next.Remove(element);
     }
 }

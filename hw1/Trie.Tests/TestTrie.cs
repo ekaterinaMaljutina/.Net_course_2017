@@ -99,7 +99,7 @@ namespace Test
         }
 
         [Test]
-        public void CheckOtherSymbols() 
+        public void CheckOtherSymbols()
         {
             var trie = new Trie();
             string[] words = { "81/*&!", "8@#$", "(/.<,", "$$/?'" };
