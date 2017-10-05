@@ -36,13 +36,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="OnlyTestMethodTest.cs" />
-    <Compile Include="Utils.cs" />
-    <Compile Include="BeforeMethodTest.cs" />
-    <Compile Include="BeforeClassMethodTest.cs" />
-    <Compile Include="AfterMethodTest.cs" />
-    <Compile Include="AfterClassMethodTest.cs" />
-    <Compile Include="OtherTest.cs" />
+    <Compile Include="TestAssert\TestAssert.cs" />
+    <Compile Include="TestMyNUnit\AfterClassMethodTest.cs" />
+    <Compile Include="TestMyNUnit\AfterMethodTest.cs" />
+    <Compile Include="TestMyNUnit\BeforeClassMethodTest.cs" />
+    <Compile Include="TestMyNUnit\BeforeMethodTest.cs" />
+    <Compile Include="TestMyNUnit\OnlyTestMethodTest.cs" />
+    <Compile Include="TestMyNUnit\OtherTest.cs" />
+    <Compile Include="Utils\Utils.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -123,6 +124,8 @@
     </MonoDevelop>
   </ProjectExtensions>
   <ItemGroup>
-    <Folder Include="Tests\" />
+    <Folder Include="TestMyNUnit\" />
+    <Folder Include="TestAssert\" />
+    <Folder Include="Utils\" />
   </ItemGroup>
 </Project>

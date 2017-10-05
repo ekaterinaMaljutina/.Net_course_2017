@@ -35,7 +35,10 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="LoadAssembly.cs" />
-    <Compile Include="TestFixture.cs" />
+    <Compile Include="Annotation\Annotation.cs" />
+    <Compile Include="Exception\AssertException.cs" />
+    <Compile Include="Assert\MyAssert.cs" />
+    <Compile Include="Logger\LoggerUtils.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
@@ -102,4 +105,10 @@
       </Properties>
     </MonoDevelop>
   </ProjectExtensions>
+  <ItemGroup>
+    <Folder Include="Annotation\" />
+    <Folder Include="Exception\" />
+    <Folder Include="Assert\" />
+    <Folder Include="Logger\" />
+  </ItemGroup>
 </Project>
