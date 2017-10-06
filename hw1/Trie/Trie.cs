@@ -6,13 +6,14 @@ namespace Trie_HW
 {
     public class Trie : ITrie
     {
-        private readonly TrieNode _root = new TrieNode(null, '#');
+        private readonly TrieNode _root;
 
         private int _size { set; get; }
 
         public Trie()
         {
             _size = 0;
+            _root = new TrieNode(null, '#');
         }
 
         public bool Add(string element)

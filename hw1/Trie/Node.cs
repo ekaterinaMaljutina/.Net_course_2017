@@ -4,19 +4,20 @@ namespace Utils
 {
     public class TrieNode
     {
-        private readonly Dictionary<char, TrieNode> _next = new Dictionary<char, TrieNode>();
+        private readonly Dictionary<char, TrieNode> _next;
+        private readonly  TrieNode _parent;
+        private readonly char _value;
 
         private int _sizePrefix { set; get; }
 
         private bool _isTerminate { set; get; }
 
-        private readonly  TrieNode _parent;
-        private readonly char _value;
-
+       
         public TrieNode(TrieNode _parent, char _value)
         {
             this._parent = _parent;
             this._value = _value;
+            _next = new Dictionary<char, TrieNode>();
         }
 
 
