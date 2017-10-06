@@ -102,7 +102,7 @@ namespace Test
         public void CheckOtherSymbols()
         {
             var trie = new Trie();
-            string[] words = { "81/*&!", "8@#$", "(/.<,", "$$/?'" };
+            string[] words = { "81/*&!", "8@$", "(/.<,", "$$/?'" };
             SetWordsInTrie(trie, words);
 
             Assert.IsTrue(trie.Contains(words[1]));

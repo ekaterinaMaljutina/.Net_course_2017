@@ -6,7 +6,8 @@ namespace Trie_HW
 {
     public class Trie : ITrie
     {
-        private readonly TrieNode _root = new TrieNode();
+        private readonly TrieNode _root = new TrieNode(null, '#');
+
         private int _size { set; get; }
 
         public Trie()
@@ -16,7 +17,7 @@ namespace Trie_HW
 
         public bool Add(string element)
         {
-            if (element == null ||  Contains(element))
+            if (element == null || Contains(element))
             {
                 return false;
             }

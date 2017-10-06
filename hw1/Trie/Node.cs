@@ -7,7 +7,18 @@ namespace Utils
         private readonly Dictionary<char, TrieNode> _next = new Dictionary<char, TrieNode>();
 
         private int _sizePrefix { set; get; }
+
         private bool _isTerminate { set; get; }
+
+        private readonly  TrieNode _parent;
+        private readonly char _value;
+
+        public TrieNode(TrieNode _parent, char _value)
+        {
+            this._parent = _parent;
+            this._value = _value;
+        }
+
 
         public bool InsertNode(TrieNode root, string prefix)
         {
@@ -41,19 +52,34 @@ namespace Utils
             var thisNode = root;
             thisNode.PredCounter();
 
-            foreach (var itemPrefix in prefix)
+//            foreach (var itemPrefix in prefix)
+            var idx = 0;
+            for (; idx < prefix.Length; ++idx)
             {
-                var parent = thisNode;
-                thisNode = thisNode.GetChild(itemPrefix);
-                thisNode.PredCounter();
+                thisNode = thisNode.GetChild(prefix[idx]);
 
-                if (thisNode.IsEmpty())
+
+                if (thisNode == null)
                 {
-                    parent.DelChild(itemPrefix);
-                    return true;
+                    break;
+//                    thisNode._parent.DelChild(itemPrefix);
+//                    return true;
                 }
+                thisNode.PredCounter();
+            }
+            if (idx != prefix.Length || thisNode == null || !thisNode._isTerminate)
+            {
+                return false;                
             }
             thisNode._isTerminate = false;
+            while (thisNode._parent != null && !thisNode._isTerminate && thisNode.IsEmpty())
+            {
+                var parent = thisNode._parent;
+                parent.DelChild(thisNode._value);
+                thisNode = parent;
+            }
+
+
             return true;
         }
 
@@ -97,7 +123,7 @@ namespace Utils
 
         private TrieNode GetChild(char element) =>  _next.ContainsKey(element) ? _next[element] : null;
 
-        private void SetChild(char element) => _next.Add(element, new TrieNode());
+        private void SetChild(char element) => _next.Add(element, new TrieNode(this, element));
 
         private void DelChild(char element) => _next.Remove(element);
     }
