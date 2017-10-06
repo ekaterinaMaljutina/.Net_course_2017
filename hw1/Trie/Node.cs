@@ -52,18 +52,14 @@ namespace Utils
             var thisNode = root;
             thisNode.PredCounter();
 
-//            foreach (var itemPrefix in prefix)
             var idx = 0;
             for (; idx < prefix.Length; ++idx)
             {
                 thisNode = thisNode.GetChild(prefix[idx]);
 
-
                 if (thisNode == null)
                 {
                     break;
-//                    thisNode._parent.DelChild(itemPrefix);
-//                    return true;
                 }
                 thisNode.PredCounter();
             }
@@ -71,14 +67,15 @@ namespace Utils
             {
                 return false;                
             }
+
             thisNode._isTerminate = false;
+
             while (thisNode._parent != null && !thisNode._isTerminate && thisNode.IsEmpty())
             {
                 var parent = thisNode._parent;
                 parent.DelChild(thisNode._value);
                 thisNode = parent;
             }
-
 
             return true;
         }
