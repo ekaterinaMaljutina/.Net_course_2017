@@ -19,7 +19,7 @@ namespace MiniRoguelike.Player
 
         public void InitFirstPosition()
         {
-            var position = _map.getFirstEmptyPosition();
+            var position = _map.GetFirstEmptyPosition();
             if (position.Item1 == -1 && position.Item2 == -1)
             {
                 throw new PlayerPositionException(" Empty position is not found");   
@@ -35,17 +35,17 @@ namespace MiniRoguelike.Player
 
         public void MoveRight()
         {
-            UpdatePosotion(x , y + 1);
+            UpdatePosotion(x, y + 1);
         }
 
         public void MoveUp()
         {
-            UpdatePosotion(x - 1, y );
+            UpdatePosotion(x - 1, y);
         }
 
         public void MoveDown()
         {
-            UpdatePosotion(x + 1, y );
+            UpdatePosotion(x + 1, y);
         }
 
 

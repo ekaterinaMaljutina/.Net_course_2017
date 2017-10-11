@@ -22,6 +22,5 @@ namespace MiniRoguelike
 
             eventLoop.Run();
         }
-    }
-        
+    }      
 }

@@ -20,7 +20,7 @@ namespace MiniRoguelike.GameMap
         {
             Map = new List<Tuple<int, int, char>>();
             _map = File.ReadLines(@PATH_TO_MAP).ToArray();
-            if (!checkValidMap())
+            if (!CheckValidMap())
             {
                 throw new MapReadException("map is mot valid");
             }
@@ -38,9 +38,9 @@ namespace MiniRoguelike.GameMap
         }
 
 
-        public Tuple<int, int> getFirstEmptyPosition()
+        public Tuple<int, int> GetFirstEmptyPosition()
         {
-            var emptyCell = getEmptyCell();
+            var emptyCell = GetEmptyCells();
             if (emptyCell.Count == 0)
             {
                 return new Tuple<int, int>(-1, -1);
@@ -49,13 +49,13 @@ namespace MiniRoguelike.GameMap
             return emptyCell.First();
         }
 
-        public List<Tuple<int, int>> getEmptyCell()
+        public List<Tuple<int, int>> GetEmptyCells()
         {
             return Map.Where(tuple => tuple.Item3 == CellType.EMPTY_CELL)
                 .Select(tuple => new Tuple<int, int>(tuple.Item1, tuple.Item2)).ToList();             
         }
 
-        private bool checkValidMap()
+        private bool CheckValidMap()
         {
             return _map.Length != 0 && _map[0].Length != 0 &&
             _map.All(line => line.All(charValue => 

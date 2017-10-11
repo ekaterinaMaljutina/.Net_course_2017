@@ -41,7 +41,7 @@ namespace MiniRoguelike
             DrawMapAndPlayer();
         }
 
-        public void End() 
+        public void End()
         {
             Shutdown();
         }
