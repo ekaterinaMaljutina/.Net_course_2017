@@ -10,7 +10,7 @@ namespace BeforeTestMethod
     {
         private static string VALUE_BEFORE = "before run";
 
-        private string _value = null;
+        private string _value;
 
         [Before]
         public void BeforeTest() {

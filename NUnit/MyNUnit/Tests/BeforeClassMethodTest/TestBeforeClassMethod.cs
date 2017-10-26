@@ -8,7 +8,7 @@ namespace BeforeClassMethodTest
 
     public class TestBeforeClassMethod
     {
-        private object _value = null;
+        private object _value;
 
         [BeforeClass]
         public void BeforeClassMethod()

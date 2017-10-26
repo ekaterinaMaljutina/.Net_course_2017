@@ -64,7 +64,8 @@ namespace UnitTest
         }
 
         private static void Check(Dictionary<string, string> result, Dictionary<string, string> expected)
-        {
+        {   
+            Assert.AreEqual(expected.Count, result.Count);
             foreach (var kvp in result)
             {
                 var nameMethod = kvp.Key.Split('.').Last().Replace(" ", String.Empty);

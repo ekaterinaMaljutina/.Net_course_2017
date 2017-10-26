@@ -9,7 +9,7 @@ namespace AfterClassMethodTest
     public class TestAfterClassMethod
     {
 
-        private object _value = null;
+        private object _value;
 
         [BeforeClass]
         public void BeforeClassMethod()
