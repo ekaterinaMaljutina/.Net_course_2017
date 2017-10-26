@@ -1,28 +1,28 @@
 ﻿<Properties StartupItem="Application/Application.csproj" RefactoringSettings.EnableRefactorings="True">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Application/Properties/AssemblyInfo.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Application/MyUnitApplication.cs">
     <Files>
-      <File FileName="UnitTest/TestAssert/TestAssert.cs" Line="24" Column="37" />
-      <File FileName="Attributes/Assert/MyAssert.cs" Line="12" Column="16" />
-      <File FileName="Attributes/LoadAssembly.cs" Line="34" Column="47" />
-      <File FileName="UnitTest/TestMyNUnit/AfterClassMethodTest.cs" Line="24" Column="50" />
-      <File FileName="UnitTest/Utils/Utils.cs" Line="59" Column="52" />
-      <File FileName="UnitTest/TestMyNUnit/AfterMethodTest.cs" Line="26" Column="50" />
-      <File FileName="Application/MyUnitApplication.cs" Line="15" Column="30" />
-      <File FileName="Attributes/Exception/AssertException.cs" Line="27" Column="6" />
+      <File FileName="UnitTest/TestAssert/TestAssert.cs" Line="1" Column="1" />
+      <File FileName="Attributes/Assert/MyAssert.cs" Line="1" Column="1" />
+      <File FileName="Attributes/LoadAssembly.cs" Line="1" Column="1" />
+      <File FileName="UnitTest/TestMyNUnit/AfterClassMethodTest.cs" Line="1" Column="1" />
+      <File FileName="UnitTest/Utils/Utils.cs" Line="1" Column="1" />
+      <File FileName="UnitTest/TestMyNUnit/AfterMethodTest.cs" Line="1" Column="1" />
+      <File FileName="Application/MyUnitApplication.cs" Line="17" Column="58" />
+      <File FileName="Attributes/Exception/AssertException.cs" Line="1" Column="1" />
       <File FileName="Attributes/Annotation/Annotation.cs" Line="1" Column="1" />
-      <File FileName="Attributes/Logger/LoggerUtils.cs" Line="11" Column="39" />
-      <File FileName="UnitTest/TestMyNUnit/BeforeMethodTest.cs" Line="27" Column="50" />
-      <File FileName="UnitTest/TestMyNUnit/OnlyTestMethodTest.cs" Line="23" Column="29" />
-      <File FileName="UnitTest/TestMyNUnit/OtherTest.cs" Line="18" Column="29" />
-      <File FileName="Tests/TestMethodTest/TestMethodTest.cs" Line="15" Column="21" />
-      <File FileName="UnitTest/TestMyNUnit/BeforeClassMethodTest.cs" Line="24" Column="50" />
-      <File FileName="Tests/AfterClassMethodTest/TestAfterClassMethod.cs" Line="13" Column="9" />
+      <File FileName="Attributes/Logger/LoggerUtils.cs" Line="1" Column="1" />
+      <File FileName="UnitTest/TestMyNUnit/BeforeMethodTest.cs" Line="1" Column="1" />
+      <File FileName="UnitTest/TestMyNUnit/OnlyTestMethodTest.cs" Line="1" Column="1" />
+      <File FileName="UnitTest/TestMyNUnit/OtherTest.cs" Line="1" Column="1" />
+      <File FileName="Tests/TestMethodTest/TestMethodTest.cs" Line="1" Column="1" />
+      <File FileName="UnitTest/TestMyNUnit/BeforeClassMethodTest.cs" Line="1" Column="1" />
+      <File FileName="Tests/AfterClassMethodTest/TestAfterClassMethod.cs" Line="1" Column="1" />
       <File FileName="Tests/TestDll/TestPerform.cs" Line="1" Column="1" />
-      <File FileName="Tests/TestDll/TestWithField.cs" Line="29" Column="33" />
+      <File FileName="Tests/TestDll/TestWithField.cs" Line="1" Column="1" />
       <File FileName="Tests/AfterTestMethod/TestAfterMethod.cs" Line="1" Column="1" />
-      <File FileName="Tests/AfterTestMethod/TestManyAfterMethod.cs" Line="32" Column="9" />
-      <File FileName="Tests/BeforeClassMethodTest/TestBeforeClassMethod.cs" Line="25" Column="14" />
+      <File FileName="Tests/AfterTestMethod/TestManyAfterMethod.cs" Line="1" Column="1" />
+      <File FileName="Tests/BeforeClassMethodTest/TestBeforeClassMethod.cs" Line="1" Column="1" />
       <File FileName="Tests/BeforeTestMethod/TestBeforeMethod.cs" Line="1" Column="1" />
       <File FileName="Tests/BeforeTestMethod/TestManyBeforeMethod.cs" Line="1" Column="1" />
       <File FileName="Application/Properties/AssemblyInfo.cs" Line="1" Column="1" />
@@ -34,4 +34,21 @@
   <MonoDevelop.Ide.DebuggingService.PinnedWatches>
     <Watch file="Attributes/LoadAssembly.cs" line="126" offsetX="1078" offsetY="2000" expression="allMethod" liveUpdate="False" />
   </MonoDevelop.Ide.DebuggingService.PinnedWatches>
+  <MonoDevelop.Ide.CustomExecutionModes>
+    <Data Name="Default (Custom)" Id="a4d5498f-3006-4643-ad4a-08eda31767b4" ModeId="Default" PromptForParameters="True">
+      <CommandData>
+        <Item Key="MonoDevelop.Ide.Execution.CustomArgsCustomizer">
+          <Value Arguments="../../../Tests/DLL/" ctype="CustomArgsExecutionModeData">
+            <EnvironmentVariables />
+          </Value>
+        </Item>
+        <Item Key="MonoDevelop.Ide.Execution.MonoExecutionCustomizer">
+          <Value ctype="MonoExecutionParameters" />
+        </Item>
+      </CommandData>
+    </Data>
+  </MonoDevelop.Ide.CustomExecutionModes>
+  <MonoDevelop.Ide.ItemProperties.Application>
+    <MonoDevelop.Ide.CustomExecutionModes />
+  </MonoDevelop.Ide.ItemProperties.Application>
 </Properties>

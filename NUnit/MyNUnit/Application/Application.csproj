@@ -20,7 +20,12 @@
     <PlatformTarget>x86</PlatformTarget>
     <Commandlineparameters>/home/kate/Study/dotNet_course/dotNet_course_2017/NUnit/MyNUnit/Tests/DLL </Commandlineparameters>
     <LangVersion>6</LangVersion>
-    <ConsolePause>false</ConsolePause>
+    <CustomCommands>
+      <CustomCommands>
+        <Command type="Custom" name="run" command="${SolutionDir}/Application/bin/Debug/Application.exe  Tests/DLL/" workingdir="${SolutionDir}" externalConsole="True" pauseExternalConsole="True" />
+      </CustomCommands>
+    </CustomCommands>
+    <Externalconsole>true</Externalconsole>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <DebugType>full</DebugType>
