@@ -1,0 +1,54 @@
+﻿<Properties StartupItem="Application/Application.csproj" RefactoringSettings.EnableRefactorings="True">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Application/MyUnitApplication.cs">
+    <Files>
+      <File FileName="UnitTest/TestAssert/TestAssert.cs" Line="1" Column="1" />
+      <File FileName="Attributes/Assert/MyAssert.cs" Line="1" Column="1" />
+      <File FileName="Attributes/LoadAssembly.cs" Line="1" Column="1" />
+      <File FileName="UnitTest/TestMyNUnit/AfterClassMethodTest.cs" Line="1" Column="1" />
+      <File FileName="UnitTest/Utils/Utils.cs" Line="1" Column="1" />
+      <File FileName="UnitTest/TestMyNUnit/AfterMethodTest.cs" Line="1" Column="1" />
+      <File FileName="Application/MyUnitApplication.cs" Line="17" Column="58" />
+      <File FileName="Attributes/Exception/AssertException.cs" Line="1" Column="1" />
+      <File FileName="Attributes/Annotation/Annotation.cs" Line="1" Column="1" />
+      <File FileName="Attributes/Logger/LoggerUtils.cs" Line="1" Column="1" />
+      <File FileName="UnitTest/TestMyNUnit/BeforeMethodTest.cs" Line="1" Column="1" />
+      <File FileName="UnitTest/TestMyNUnit/OnlyTestMethodTest.cs" Line="1" Column="1" />
+      <File FileName="UnitTest/TestMyNUnit/OtherTest.cs" Line="1" Column="1" />
+      <File FileName="Tests/TestMethodTest/TestMethodTest.cs" Line="1" Column="1" />
+      <File FileName="UnitTest/TestMyNUnit/BeforeClassMethodTest.cs" Line="1" Column="1" />
+      <File FileName="Tests/AfterClassMethodTest/TestAfterClassMethod.cs" Line="1" Column="1" />
+      <File FileName="Tests/TestDll/TestPerform.cs" Line="1" Column="1" />
+      <File FileName="Tests/TestDll/TestWithField.cs" Line="1" Column="1" />
+      <File FileName="Tests/AfterTestMethod/TestAfterMethod.cs" Line="1" Column="1" />
+      <File FileName="Tests/AfterTestMethod/TestManyAfterMethod.cs" Line="1" Column="1" />
+      <File FileName="Tests/BeforeClassMethodTest/TestBeforeClassMethod.cs" Line="1" Column="1" />
+      <File FileName="Tests/BeforeTestMethod/TestBeforeMethod.cs" Line="1" Column="1" />
+      <File FileName="Tests/BeforeTestMethod/TestManyBeforeMethod.cs" Line="1" Column="1" />
+      <File FileName="Application/Properties/AssemblyInfo.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
+    <Watch file="Attributes/LoadAssembly.cs" line="126" offsetX="1078" offsetY="2000" expression="allMethod" liveUpdate="False" />
+  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
+  <MonoDevelop.Ide.CustomExecutionModes>
+    <Data Name="Default (Custom)" Id="a4d5498f-3006-4643-ad4a-08eda31767b4" ModeId="Default" PromptForParameters="True">
+      <CommandData>
+        <Item Key="MonoDevelop.Ide.Execution.CustomArgsCustomizer">
+          <Value Arguments="../../../Tests/DLL/" ctype="CustomArgsExecutionModeData">
+            <EnvironmentVariables />
+          </Value>
+        </Item>
+        <Item Key="MonoDevelop.Ide.Execution.MonoExecutionCustomizer">
+          <Value ctype="MonoExecutionParameters" />
+        </Item>
+      </CommandData>
+    </Data>
+  </MonoDevelop.Ide.CustomExecutionModes>
+  <MonoDevelop.Ide.ItemProperties.Application>
+    <MonoDevelop.Ide.CustomExecutionModes />
+  </MonoDevelop.Ide.ItemProperties.Application>
+</Properties>
