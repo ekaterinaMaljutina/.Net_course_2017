@@ -1,6 +1,6 @@
 ﻿using System;
-using MyUnit.Annotation;
-using MyUnit.MyAssert;
+using Attributes.Annotation;
+using Attributes.MyAssert;
 
 namespace TestMethodTest
 {
@@ -9,27 +9,27 @@ namespace TestMethodTest
     public class TestMethodTest
     {
         [Test]
-        public void simpleTestMethod()
+        public void SimpleTestMethod()
         {
             Console.WriteLine(@"RUN method simpleTestMethod");
-            Assert.isTrue(true);
+            Assert.IsTrue(true);
         }
 
         [Test]
-        public void simpleSecondTestMethod()
+        public void SimpleSecondTestMethod()
         {
             Console.WriteLine(@"RUN method simpleSecondTestMethod");
         }
 
-        [Test(Ignore = " Simple ingore test")]
-        public void simpleIgnoreTest()
+        [Test(Ignore = true)]
+        public void SimpleIgnoreTest()
         {
-            Assert.isTrue(false);
+            Assert.IsTrue(false);
             Console.WriteLine(@" RUN IGNORE test");
         }
 
         [Test(Expected = "ArgumentNullException")]
-        public void expectedTest()
+        public void ExpectedTest()
         {
             throw new ArgumentNullException();
         }

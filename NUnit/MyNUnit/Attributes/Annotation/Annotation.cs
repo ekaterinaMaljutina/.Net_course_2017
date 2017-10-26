@@ -1,37 +1,33 @@
 ﻿using System;
 
-namespace MyUnit.Annotation
+namespace Attributes.Annotation
 {
     [AttributeUsage (AttributeTargets.Method)]
-    public class Test:System.Attribute
+    public class Test: Attribute
     {
-        public string Expected { set; get; }
+        public string Expected { get; set; }
 
-        public string Ignore{ set; get; }
+        public bool Ignore { get; set; }
     }
 
     [AttributeUsage (AttributeTargets.Method)]
-    public class Before:System.Attribute
+    public class Before: Attribute
     {
-
     }
 
     [AttributeUsage (AttributeTargets.Method)]
-    public class After:System.Attribute
+    public class After: Attribute
     {
-
     }
 
     [AttributeUsage (AttributeTargets.Method)]
-    public class BeforeClass:System.Attribute
+    public class BeforeClass: Attribute
     {
-
     }
 
     [AttributeUsage (AttributeTargets.Method)]
-    public class AfterClass:System.Attribute
+    public class AfterClass: Attribute
     {
-
     }
 }
 

@@ -1,6 +1,6 @@
 using System;
-using MyUnit.Annotation;
-using MyUnit.MyAssert;
+using Attributes.Annotation;
+using Attributes.MyAssert;
 
 namespace Tests
 {
@@ -8,11 +8,11 @@ namespace Tests
 
     public sealed class Value
     {
-        public string val { get; }
+        public string Val { get; }
 
         public Value(string val)
         {
-            this.val = val;
+            this.Val = val;
         }
     }
 
@@ -23,43 +23,43 @@ namespace Tests
 
         private static Value _value { set; get; }
 
-        [Test(Ignore = " simple ignore")]
-        public void simpleIgnoreTest()
+        [Test(Ignore = true)]
+        public void SimpleIgnoreTest()
         {
-            Assert.isTrue(false);
+            Assert.IsTrue(false);
         }
 
         [BeforeClass]
-        public void beforeClassVarIsNullTest()
+        public void BeforeClassVarIsNullTest()
         {
             Assert.Equal(_value, null);
         }
 
         [Before]
-        public void beforeSetVarValueTest()
+        public void BeforeSetVarValueTest()
         {
             _value = new Value(_valueString);
             Console.WriteLine(" run before method");
             Assert.Equal(null, _value);
-            Assert.Equal(_valueString, _value.val);
+            Assert.Equal(_valueString, _value.Val);
         }
 
         [Test]
-        public void checkLoadedInBeforetestVarTest()
+        public void CheckLoadedInBeforetestVarTest()
         {
             Assert.NotEqual(null, _value);
-            Assert.Equal(_valueString, _value.val);
+            Assert.Equal(_valueString, _value.Val);
         }
 
         [After]
-        public void aftherTest()
+        public void AftherTest()
         {
             Console.WriteLine(" run after method");
             _value = null;
         }
 
         [AfterClass]
-        public void afterClassCheckInNullVarTest()
+        public void AfterClassCheckInNullVarTest()
         {
             Assert.Equal(_value, null);
         }

@@ -1,6 +1,6 @@
 ﻿using System;
-using MyUnit.Annotation;
-using MyUnit.MyAssert;
+using Attributes.Annotation;
+using Attributes.MyAssert;
 
 namespace Tests
 {
@@ -69,7 +69,7 @@ namespace Tests
             Assert.Equal(a, b);
         }
 
-        [Test(Ignore = " ignore test")]
+        [Test(Ignore = true)]
         public void IgnoreTest()
         {
             Console.WriteLine(@" 		opps... ignore test");

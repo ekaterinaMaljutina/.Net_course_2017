@@ -1,6 +1,6 @@
 ﻿using System;
-using MyUnit.Annotation;
-using MyUnit.MyAssert;
+using Attributes.Annotation;
+using Attributes.MyAssert;
 
 namespace AfterTestMethod
 {
@@ -11,30 +11,34 @@ namespace AfterTestMethod
         private static readonly string VALUE_BEFORE = "before run";
         private static readonly string VALUE_AFTER = "after run";
 
-        private string value = VALUE_AFTER;
+        private string _value = VALUE_AFTER;
 
         [Before]
-        public void BeforeTest() {
-            Assert.Equal(VALUE_AFTER, value);
-            value = VALUE_BEFORE;
+        public void BeforeTest()
+        {
+            Assert.Equal(VALUE_AFTER, _value);
+            _value = VALUE_BEFORE;
         }
 
         [Test]
-        public void TestMethodOne() {
-            Assert.Equal(VALUE_BEFORE, value);
-            value = null;
+        public void TestMethodOne()
+        {
+            Assert.Equal(VALUE_BEFORE, _value);
+            _value = null;
         }
 
         [Test]
-        public void TestMethodTwo() {
-            Assert.Equal(VALUE_BEFORE, value);
-            value = null;
+        public void TestMethodTwo()
+        {
+            Assert.Equal(VALUE_BEFORE, _value);
+            _value = null;
         }
 
         [After]
-        public void AfterTest() {
-            Assert.Equal(null, value);
-            value = VALUE_AFTER;
+        public void AfterTest()
+        {
+            Assert.Equal(null, _value);
+            _value = VALUE_AFTER;
         }
     }
 }

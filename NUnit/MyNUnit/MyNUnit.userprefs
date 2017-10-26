@@ -1,23 +1,37 @@
 ﻿<Properties StartupItem="Application/Application.csproj" RefactoringSettings.EnableRefactorings="True">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Attributes/TestFixture.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Application/Properties/AssemblyInfo.cs">
     <Files>
-      <File FileName="Attributes/TestFixture.cs" Line="1" Column="1" />
-      <File FileName="UnitTest/TestAssert/TestAssert.cs" Line="7" Column="2" />
-      <File FileName="Attributes/Assert/MyAssert.cs" Line="32" Column="29" />
-      <File FileName="Attributes/LoadAssembly.cs" Line="8" Column="14" />
-      <File FileName="UnitTest/TestMyNUnit/AfterClassMethodTest.cs" Line="9" Column="31" />
-      <File FileName="UnitTest/Utils/Utils.cs" Line="66" Column="1" />
-      <File FileName="UnitTest/TestMyNUnit/AfterMethodTest.cs" Line="1" Column="1" />
-      <File FileName="Application/MyUniteApplication.cs" Line="17" Column="90" />
-      <File FileName="Attributes/Exception/AssertException.cs" Line="3" Column="18" />
-      <File FileName="Attributes/Annotation/Annotation.cs" Line="3" Column="18" />
+      <File FileName="UnitTest/TestAssert/TestAssert.cs" Line="24" Column="37" />
+      <File FileName="Attributes/Assert/MyAssert.cs" Line="12" Column="16" />
+      <File FileName="Attributes/LoadAssembly.cs" Line="34" Column="47" />
+      <File FileName="UnitTest/TestMyNUnit/AfterClassMethodTest.cs" Line="24" Column="50" />
+      <File FileName="UnitTest/Utils/Utils.cs" Line="59" Column="52" />
+      <File FileName="UnitTest/TestMyNUnit/AfterMethodTest.cs" Line="26" Column="50" />
+      <File FileName="Application/MyUnitApplication.cs" Line="15" Column="30" />
+      <File FileName="Attributes/Exception/AssertException.cs" Line="27" Column="6" />
+      <File FileName="Attributes/Annotation/Annotation.cs" Line="1" Column="1" />
+      <File FileName="Attributes/Logger/LoggerUtils.cs" Line="11" Column="39" />
+      <File FileName="UnitTest/TestMyNUnit/BeforeMethodTest.cs" Line="27" Column="50" />
+      <File FileName="UnitTest/TestMyNUnit/OnlyTestMethodTest.cs" Line="23" Column="29" />
+      <File FileName="UnitTest/TestMyNUnit/OtherTest.cs" Line="18" Column="29" />
+      <File FileName="Tests/TestMethodTest/TestMethodTest.cs" Line="15" Column="21" />
+      <File FileName="UnitTest/TestMyNUnit/BeforeClassMethodTest.cs" Line="24" Column="50" />
+      <File FileName="Tests/AfterClassMethodTest/TestAfterClassMethod.cs" Line="13" Column="9" />
+      <File FileName="Tests/TestDll/TestPerform.cs" Line="1" Column="1" />
+      <File FileName="Tests/TestDll/TestWithField.cs" Line="29" Column="33" />
+      <File FileName="Tests/AfterTestMethod/TestAfterMethod.cs" Line="1" Column="1" />
+      <File FileName="Tests/AfterTestMethod/TestManyAfterMethod.cs" Line="32" Column="9" />
+      <File FileName="Tests/BeforeClassMethodTest/TestBeforeClassMethod.cs" Line="25" Column="14" />
+      <File FileName="Tests/BeforeTestMethod/TestBeforeMethod.cs" Line="1" Column="1" />
+      <File FileName="Tests/BeforeTestMethod/TestManyBeforeMethod.cs" Line="1" Column="1" />
+      <File FileName="Application/Properties/AssemblyInfo.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/home/kate/Study/dotNet_course/dotNet_course_2017/NUnit/MyNUnit/UnitTest/TestMyNUnit/AfterClassMethodTest.cs" line="23" column="39" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
+    <Watch file="Attributes/LoadAssembly.cs" line="126" offsetX="1078" offsetY="2000" expression="allMethod" liveUpdate="False" />
+  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
 </Properties>

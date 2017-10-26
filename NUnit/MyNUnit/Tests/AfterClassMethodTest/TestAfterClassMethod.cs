@@ -1,6 +1,6 @@
 ﻿using System;
-using MyUnit.Annotation;
-using MyUnit.MyAssert;
+using Attributes.Annotation;
+using Attributes.MyAssert;
 
 namespace AfterClassMethodTest
 {
@@ -9,7 +9,7 @@ namespace AfterClassMethodTest
     public class TestAfterClassMethod
     {
 
-        private Object _value = null;
+        private object _value = null;
 
         [BeforeClass]
         public void BeforeClassMethod()
@@ -46,9 +46,6 @@ namespace AfterClassMethodTest
         {
             Assert.NotEqual(null, _value as Test);
         }
-
-
     }
-
 }
 

@@ -19,6 +19,11 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <LangVersion>6</LangVersion>
+    <CustomCommands>
+      <CustomCommands>
+        <Command type="AfterBuild" command="cp ${SolutionDir}/Tests/TestDll/bin/Debug/TestDll.dll  ${SolutionDir}/Tests/DLL/" workingdir="${SolutionDir}" />
+      </CustomCommands>
+    </CustomCommands>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>full</DebugType>

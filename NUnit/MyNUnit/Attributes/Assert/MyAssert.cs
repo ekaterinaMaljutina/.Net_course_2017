@@ -1,44 +1,50 @@
 ﻿using System;
-using MyUnit.AssertException;
+using Attributes.AssertException;
 
-namespace MyUnit.MyAssert
+namespace Attributes.MyAssert
 {
     public static class MyAssert
     {
+        private static string PrintLog (string expected, string actual) => $"Expected: {expected} Actual: {actual}";
 
-        private static string PrintLog (string expected, string actual) =>  @"Expected: " + expected + " Actual: " + actual;
-
-        public static bool isTrue (bool value)
+        public static bool IsTrue(bool value)
         {
-            if (value == true) {
+            if (value) 
+            {
                 return true;
             }
-            IsFail (PrintLog ("true", "false"));
+            Fail(PrintLog("true", "false"));
             return false;
         }
 
-        public static bool isFalse (bool value)
+        public static bool IsFalse(bool value)
         {
-            if (value == false) {
+            if (!value) 
+            {
                 return true;
             }
-            IsFail (PrintLog ("false", "true"));
+            Fail(PrintLog("false", "true"));
             return false;
         }
 
-        public static bool Equal (Object expected, Object actual)
+        public static bool Equal(object expected, object actual)
         {
-            if (expected == null && actual == null) {
+            if (expected == null && actual == null) 
+            {
                 return true;
             }
-            if ((expected == null && actual != null) || (actual == null && expected != null)) {
+            if (expected == null || actual == null) 
+            {
                 return false;
             }
-            if (expected.Equals (actual)) {
-                return true;
+                
+            var result = object.Equals(expected, actual);
+            if (result) 
+            {
+                return result;
             }
-            IsFail (PrintLog (expected.ToString (), actual.ToString ()));
-            return false;
+            Fail(PrintLog(expected.ToString(), actual.ToString()));
+            return result;
         }
 
 
@@ -48,20 +54,24 @@ namespace MyUnit.MyAssert
             {
                 return false;
             }
-            if ( (expected == null && actual != null) || (expected != null && actual == null)) {
+            if (expected == null || actual == null) 
+            {
                 return true;
             }
-            if (expected.Equals (actual)) {
-                IsFail (PrintLog (expected.ToString (), actual.ToString ()));
-                return false;
+
+            var result = object.Equals(expected, actual);
+            if (result) 
+            {
+                Fail(PrintLog(expected.ToString(), actual.ToString()));
+                return !result;
             }
-            return true;
+            return !result;
         }
 
 
-        public static void IsFail (string message)
+        private static void Fail(string message)
         {           
-            throw new MyAssertException (message);
+            throw new MyAssertException(message);
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿using System;
-using MyUnit.Annotation;
-using MyUnit.MyAssert;
+using Attributes.Annotation;
+using Attributes.MyAssert;
 
 namespace AfterTestMethod
 {

@@ -11,16 +11,16 @@ namespace UnitTest
     public class OnlyTestMethodTest
     {
 
-        private static readonly Dictionary<string, tuple> _expected = 
-            new Dictionary<string, tuple>();
+        private static readonly Dictionary<string, string> _expected = 
+            new Dictionary<string, string>();
 
 
         static OnlyTestMethodTest()
         {
-            _expected.Add("simpleTestMethod", new tuple(Utils.SUCCESS, ""));
-            _expected.Add("simpleSecondTestMethod", new tuple(Utils.SUCCESS, ""));
-            _expected.Add("simpleIgnoreTest", new tuple(Utils.IGNORE, "Simple ingore test"));
-            _expected.Add("expectedTest", new tuple(Utils.SUCCESS, ""));
+            _expected.Add("SimpleTestMethod", Utils.SUCCESS);
+            _expected.Add("SimpleSecondTestMethod", Utils.SUCCESS);
+            _expected.Add("SimpleIgnoreTest", Utils.IGNORE);
+            _expected.Add("ExpectedTest", Utils.SUCCESS);
         }
 
         [Test]
@@ -28,7 +28,6 @@ namespace UnitTest
         {
             String pathToDLL = @"../../../Tests/DLL/TestMethodTest.dll";
             Utils.LoadTest(pathToDLL, _expected);
-
         }
     }
 }

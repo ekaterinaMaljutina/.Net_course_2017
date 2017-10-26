@@ -1,6 +1,6 @@
 ﻿using System;
-using MyUnit.Annotation;
-using MyUnit.MyAssert;
+using Attributes.Annotation;
+using Attributes.MyAssert;
 
 namespace BeforeClassMethodTest
 {
@@ -8,7 +8,7 @@ namespace BeforeClassMethodTest
 
     public class TestBeforeClassMethod
     {
-        private Object _value = null;
+        private object _value = null;
 
         [BeforeClass]
         public void BeforeClassMethod()
@@ -26,7 +26,7 @@ namespace BeforeClassMethodTest
         }
 
         [Test]
-        public void testMethod()
+        public void TestMethod()
         {
             Assert.NotEqual(null, _value as Test);
         }

@@ -8,13 +8,13 @@ namespace UnitTest
 
     public class AfterClassMethodTest
     {
-        private static readonly Dictionary<string, tuple> _expected = 
-            new Dictionary<string, tuple>();
+        private static readonly Dictionary<string, string> _expected = 
+            new Dictionary<string, string>();
 
 
         static AfterClassMethodTest()
         {
-            _expected.Add("TestMethod", new tuple(Utils.SUCCESS, "")); 
+            _expected.Add("TestMethod", Utils.SUCCESS); 
         }
 
         [Test]
@@ -22,7 +22,6 @@ namespace UnitTest
         {
             String pathToDLL = @"../../../Tests/DLL/AfterClassMethodTest.dll";
             Utils.LoadTest(pathToDLL, _expected);
-
         }
     }
 }

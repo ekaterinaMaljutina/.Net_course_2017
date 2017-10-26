@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 using System;
-using MyUnit.MyAssert;
-using MyUnit.AssertException;
+using Attributes.MyAssert;
+using Attributes.AssertException;
 
 namespace TestAssert
 {
@@ -11,26 +11,26 @@ namespace TestAssert
         [Test]
         public void TestIsTrue()
         {     
-            Assert.IsTrue(MyAssert.isTrue(true));
-            Assert.IsTrue(MyAssert.isTrue(1 == 1));
-            Assert.IsTrue(MyAssert.isTrue("a" == "a"));
+            Assert.IsTrue(MyAssert.IsTrue(true));
+            Assert.IsTrue(MyAssert.IsTrue(1 == 1));
+            Assert.IsTrue(MyAssert.IsTrue("a" == "a"));
         }
 
         [Test]
         public void TestIsFalse() 
         {
-            Assert.IsTrue(MyAssert.isFalse(false));
-            Assert.IsTrue(MyAssert.isFalse(1 == 2));
-            Assert.IsTrue(MyAssert.isFalse("a" == "b"));
+            Assert.IsTrue(MyAssert.IsFalse(false));
+            Assert.IsTrue(MyAssert.IsFalse(1 == 2));
+            Assert.IsTrue(MyAssert.IsFalse("a" == "b"));
         }
 
         [Test]
         public void TestEqual() 
         {
             Assert.IsTrue(MyAssert.Equal("a", "a"));
-            Assert.IsTrue(MyAssert.Equal(1, 1));
-                       
+            Assert.IsTrue(MyAssert.Equal(1, 1));      
         }
+
         [Test]
         [ExpectedException(typeof(MyAssertException))]
         public void TestEqulsWithFail()
