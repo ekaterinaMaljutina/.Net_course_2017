@@ -22,7 +22,7 @@ namespace UnitTest
         [Test]
         public void TestMethodTest()
         {
-            String pathToDLL = @"../../../Tests/AfterTestMethod/bin/Debug/AfterTestMethod.dll";
+            String pathToDLL = @"../../../Tests/DLL/AfterTestMethod.dll";
             Utils.LoadTest(pathToDLL, _expected);
         }
     }

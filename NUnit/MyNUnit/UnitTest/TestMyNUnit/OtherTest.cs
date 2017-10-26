@@ -25,7 +25,7 @@ namespace UnitTest
         [Test]
         public void TestMethodTest()
         {
-            String pathToDLL = @"/home/kate/Study/dotNet_course/dotNet_course_2017/NUnit/MyNUnit/Tests/DLL/TestDll.dll";
+            String pathToDLL = @"../../../Tests/DLL/TestDll.dll";
             Utils.LoadTest(pathToDLL, _expected);    
         }
     }
