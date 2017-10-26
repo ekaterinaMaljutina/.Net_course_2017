@@ -1,6 +1,0 @@
-/home/kate/Study/dotNet_course/dotNet_course_2017/NUnit/MyNUnit/Tests/AfterClassMethodTest/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
-/home/kate/Study/dotNet_course/dotNet_course_2017/NUnit/MyNUnit/Tests/AfterClassMethodTest/bin/Debug/AfterClassMethodTest.pdb
-/home/kate/Study/dotNet_course/dotNet_course_2017/NUnit/MyNUnit/Tests/AfterClassMethodTest/bin/Debug/AfterClassMethodTest.dll
-/home/kate/Study/dotNet_course/dotNet_course_2017/NUnit/MyNUnit/Tests/AfterClassMethodTest/obj/Debug/AfterClassMethodTest.dll
-/home/kate/Study/dotNet_course/dotNet_course_2017/NUnit/MyNUnit/Tests/AfterClassMethodTest/obj/Debug/AfterClassMethodTest.pdb
-/home/kate/Study/dotNet_course/dotNet_course_2017/NUnit/MyNUnit/Tests/AfterClassMethodTest/bin/Debug/Attributes.dll
