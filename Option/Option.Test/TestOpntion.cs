@@ -1,7 +1,6 @@
 ﻿using NUnit.Framework;
 using System;
 using MyOption;
-using System.Collections.Generic;
 
 namespace TestOption
 {
@@ -23,7 +22,7 @@ namespace TestOption
         public void InitValueTest()
         {
             var intValue = 1;
-            Option<int> value = Option.Some(intValue);
+            var value = Option.Some(intValue);
             Assert.IsTrue(value.IsSome);
             Assert.AreEqual(intValue, value.Value);
         }
