@@ -1,0 +1,18 @@
+﻿<Properties StartupItem="Option.Test/Test.MyOption.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Option.Test/TestOpntion.cs">
+    <Files>
+      <File FileName="Option.userprefs" Line="1" Column="1" />
+      <File FileName="Option.sln" Line="2" Column="58" />
+      <File FileName="Option/Option.cs" Line="63" Column="88" />
+      <File FileName="Option.Test/TestOpntion.cs" Line="25" Column="16" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/home/kate/Study/dotNet_course/dotNet_course_2017/Option/Option.Test/TestOpntion.cs" line="124" column="1" />
+      <Breakpoint file="/home/kate/Study/dotNet_course/dotNet_course_2017/Option/Option.Test/TestOpntion.cs" line="121" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
