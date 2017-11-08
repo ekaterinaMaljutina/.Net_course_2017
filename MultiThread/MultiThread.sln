@@ -5,7 +5,7 @@ VisualStudioVersion = 12.0.0.0
 MinimumVisualStudioVersion = 10.0.0.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Philosopher", "Philosopher/Philosopher.csproj", "{36187B03-DA2F-4E57-B1F3-A56AEDF7216A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueueLockBase", "QueueLockBase/QueueLockBase.csproj", "{E8ECE363-1D5E-43C0-897C-7549AABB3B32}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArrayQueue", "ArrayQueue/ArrayQueue.csproj", "{E8ECE363-1D5E-43C0-897C-7549AABB3B32}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArrayQueueTest", "ArrayQueueTest/ArrayQueueTest.csproj", "{6B443CBB-CB0A-4288-91A1-EFC14B0C2C85}"
 EndProject
