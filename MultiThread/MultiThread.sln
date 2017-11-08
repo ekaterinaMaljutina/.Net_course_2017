@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.0.0
+MinimumVisualStudioVersion = 10.0.0.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Philosopher", "Philosopher/Philosopher.csproj", "{36187B03-DA2F-4E57-B1F3-A56AEDF7216A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArrayQueue", "ArrayQueue/ArrayQueue.csproj", "{E8ECE363-1D5E-43C0-897C-7549AABB3B32}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArrayQueueTest", "ArrayQueueTest/ArrayQueueTest.csproj", "{6B443CBB-CB0A-4288-91A1-EFC14B0C2C85}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{36187B03-DA2F-4E57-B1F3-A56AEDF7216A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36187B03-DA2F-4E57-B1F3-A56AEDF7216A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36187B03-DA2F-4E57-B1F3-A56AEDF7216A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36187B03-DA2F-4E57-B1F3-A56AEDF7216A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8ECE363-1D5E-43C0-897C-7549AABB3B32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8ECE363-1D5E-43C0-897C-7549AABB3B32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8ECE363-1D5E-43C0-897C-7549AABB3B32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8ECE363-1D5E-43C0-897C-7549AABB3B32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B443CBB-CB0A-4288-91A1-EFC14B0C2C85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B443CBB-CB0A-4288-91A1-EFC14B0C2C85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B443CBB-CB0A-4288-91A1-EFC14B0C2C85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B443CBB-CB0A-4288-91A1-EFC14B0C2C85}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

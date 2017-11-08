@@ -1,0 +1,6 @@
+/home/kate/Study/dotNet_course/dotNet_course_2017/NUnit/MyNUnit/Tests/BeforeTestMethod/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/kate/Study/dotNet_course/dotNet_course_2017/NUnit/MyNUnit/Tests/BeforeTestMethod/bin/Debug/BeforeTestMethod.pdb
+/home/kate/Study/dotNet_course/dotNet_course_2017/NUnit/MyNUnit/Tests/BeforeTestMethod/bin/Debug/BeforeTestMethod.dll
+/home/kate/Study/dotNet_course/dotNet_course_2017/NUnit/MyNUnit/Tests/BeforeTestMethod/obj/Debug/BeforeTestMethod.dll
+/home/kate/Study/dotNet_course/dotNet_course_2017/NUnit/MyNUnit/Tests/BeforeTestMethod/obj/Debug/BeforeTestMethod.pdb
+/home/kate/Study/dotNet_course/dotNet_course_2017/NUnit/MyNUnit/Tests/BeforeTestMethod/bin/Debug/Attributes.dll

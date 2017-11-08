@@ -1,0 +1,7 @@
+/home/kate/Study/dotNet_course/dotNet_course_2017/NUnit/MyNUnit/Application/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/kate/Study/dotNet_course/dotNet_course_2017/NUnit/MyNUnit/Application/bin/Debug/Application.pdb
+/home/kate/Study/dotNet_course/dotNet_course_2017/NUnit/MyNUnit/Application/bin/Debug/Application.exe
+/home/kate/Study/dotNet_course/dotNet_course_2017/NUnit/MyNUnit/Application/obj/x86/Debug/Application.exe
+/home/kate/Study/dotNet_course/dotNet_course_2017/NUnit/MyNUnit/Application/obj/x86/Debug/Application.pdb
+/home/kate/Study/dotNet_course/dotNet_course_2017/NUnit/MyNUnit/Application/bin/Debug/Attributes.dll
+/home/kate/Study/dotNet_course/dotNet_course_2017/NUnit/MyNUnit/Application/bin/Debug/Attributes.pdb
