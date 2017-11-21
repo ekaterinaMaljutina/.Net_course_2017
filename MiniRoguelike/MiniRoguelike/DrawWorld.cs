@@ -4,15 +4,15 @@ using MiniRoguelike.Player;
 
 namespace MiniRoguelike
 {
-    public class DrawWorld
+    public class DrawWorld 
     {
-        private WorldMap _map;
-        private Hero _player;
+        private readonly WorldMap _map;
+        private readonly Hero _player;
 
-        public DrawWorld(WorldMap _map, Hero _player)
+        public DrawWorld(WorldMap map, Hero player)
         {
-            this._map = _map;
-            this._player = _player;
+            _map = map;
+            _player = player;
 
             DrawMapAndPlayer();
         }
@@ -40,12 +40,7 @@ namespace MiniRoguelike
             _player.MoveDown();
             DrawMapAndPlayer();
         }
-
-        public void End()
-        {
-            Shutdown();
-        }
-
+        
         private void DrawMapAndPlayer()
         {
             Console.CursorVisible = false;
@@ -56,19 +51,11 @@ namespace MiniRoguelike
                 });     
 
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.SetCursorPosition(_player.y, _player.x);
-            Console.Write(CellType.PLAYER);
+            Console.SetCursorPosition(_player.Y, _player.X);
+            Console.Write(CellType.Player);
             Console.ResetColor();
             Console.SetCursorPosition(0, 0);
 
-        }
-
-        private void Shutdown()
-        {
-            Console.Clear();
-            Console.ForegroundColor = ConsoleColor.DarkRed;
-            Console.WriteLine("GOOD BYE");
-            Console.ResetColor();  
         }
     }
 }

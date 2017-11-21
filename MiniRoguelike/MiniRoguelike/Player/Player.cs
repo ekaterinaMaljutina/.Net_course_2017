@@ -1,72 +1,59 @@
-﻿using System;
+﻿using MiniRoguelike.Exception;
 using MiniRoguelike.GameMap;
 
 namespace MiniRoguelike.Player
 {
     public class Hero
     {
-        public int x { get; private set; }
+        public int X { get; private set; }
 
-        public int y { get; private set; }
+        public int Y { get; private set; }
 
-        public readonly WorldMap _map;
+        public readonly WorldMap Map;
 
-        public Hero(WorldMap _map)
+        public Hero(WorldMap map)
         {
-            this._map = _map;
+            Map = map;
             InitFirstPosition();
         }
 
         public void InitFirstPosition()
         {
-            var position = _map.GetFirstEmptyPosition();
+            var position = Map.GetFirstEmptyPosition();
             if (position.Item1 == -1 && position.Item2 == -1)
             {
-                throw new PlayerPositionException(" Empty position is not found");   
+                throw new PlayerPositionException("Empty position is not found");
             }
-            x = position.Item1;
-            y = position.Item2;
+            X = position.Item1;
+            Y = position.Item2;
         }
 
         public void MoveLevt()
         {
-            UpdatePosotion(x, y - 1);
+            UpdatePosotion(X, Y - 1);
         }
 
         public void MoveRight()
         {
-            UpdatePosotion(x, y + 1);
+            UpdatePosotion(X, Y + 1);
         }
 
         public void MoveUp()
         {
-            UpdatePosotion(x - 1, y);
+            UpdatePosotion(X - 1, Y);
         }
 
         public void MoveDown()
         {
-            UpdatePosotion(x + 1, y);
+            UpdatePosotion(X + 1, Y);
         }
 
 
         private void UpdatePosotion(int x, int y)
         {
-            if (_map.IsEmptyCell(x, y))
-            {
-                this.x = x;
-                this.y = y;
-            }
+            if (!Map.IsEmptyCell(x, y)) return;
+            X = x;
+            Y = y;
         }
-
-    }
-
-    public class PlayerPositionException : Exception
-    {
-        public PlayerPositionException(string message)
-            : base(message)
-        {
-        }
-        
     }
 }
-

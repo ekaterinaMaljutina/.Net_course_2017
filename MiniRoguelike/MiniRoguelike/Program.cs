@@ -1,10 +1,11 @@
 ﻿using System;
+using System.Threading.Tasks;
 using MiniRoguelike.GameMap;
 using MiniRoguelike.Player;
 
 namespace MiniRoguelike
 {
-    class MainClass
+    internal class MainClass
     {
         public static void Main(string[] args)
         {
@@ -12,15 +13,36 @@ namespace MiniRoguelike
             var hero = new Hero(map);
             var world = new DrawWorld(map, hero);
 
-            var eventLoop = new EventLoop();
+            Console.CancelKeyPress += (sender, eventArgs) => Environment.Exit(0);
 
-            eventLoop.LeftHandler += world.Left;
-            eventLoop.RightHandler += world.Right;
-            eventLoop.UpHandler += world.Up;
-            eventLoop.DownHandler += world.Down;
-            eventLoop.ShutDown += world.End; 
-
-            eventLoop.Run();
+            var taskKeys = new Task(() => ReadKeys(world));
+            taskKeys.Start();
+            var tasks = new[] {taskKeys};
+            Task.WaitAll(tasks);
         }
-    }      
+
+        private static void ReadKeys(DrawWorld drawWorld)
+        {
+            var keyInfo = new ConsoleKeyInfo();
+            while (!Console.KeyAvailable && keyInfo.Key != ConsoleKey.Escape)
+            {
+                keyInfo = Console.ReadKey(true);
+                switch (keyInfo.Key)
+                {
+                    case ConsoleKey.LeftArrow:
+                        drawWorld.Left();
+                        break;
+                    case ConsoleKey.RightArrow:
+                        drawWorld.Right();
+                        break;
+                    case ConsoleKey.UpArrow:
+                        drawWorld.Up();
+                        break;
+                    case ConsoleKey.DownArrow:
+                        drawWorld.Down();
+                        break;
+                }
+            }
+        }
+    }
 }
