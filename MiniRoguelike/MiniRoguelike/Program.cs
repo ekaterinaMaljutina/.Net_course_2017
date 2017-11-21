@@ -11,6 +11,7 @@ namespace MiniRoguelike
         {
             var map = new WorldMap();
             var hero = new Hero(map);
+            hero.InitFirstPosition();
             var world = new DrawWorld(map, hero);
 
             Console.CancelKeyPress += (sender, eventArgs) => Environment.Exit(0);

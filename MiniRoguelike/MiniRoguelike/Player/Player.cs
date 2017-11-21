@@ -14,7 +14,6 @@ namespace MiniRoguelike.Player
         public Hero(WorldMap map)
         {
             Map = map;
-            InitFirstPosition();
         }
 
         public void InitFirstPosition()

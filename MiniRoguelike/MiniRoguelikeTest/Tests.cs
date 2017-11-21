@@ -21,6 +21,7 @@ namespace MiniRoguelikeTest
             };
             var map = new WorldMap(mapArray);
             var hero = new Hero(map);
+            hero.InitFirstPosition();
             var world = new DrawWorld(map, hero);
             
             var x = hero.X;
@@ -60,7 +61,7 @@ namespace MiniRoguelikeTest
                 "##"
             };
             var world = new WorldMap(map);
-            Exception ex = Assert.Throws<PlayerPositionException>(() => new Hero(world));
+            Exception ex = Assert.Throws<PlayerPositionException>(() => new Hero(world).InitFirstPosition());
             Assert.AreEqual("Empty position is not found", ex.Message);
         }
     }
