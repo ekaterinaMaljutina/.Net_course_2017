@@ -29,13 +29,15 @@ module hw =
         rev listx []
     
     //3
-    let rec merge = 
-        function 
-        | [], ys -> ys
-        | xs, [] -> xs
-        | x :: xs, y :: ys -> 
-            if x < y then x :: merge (xs, y :: ys)
-            else y :: merge (x :: xs, ys)
+    let rec merge l r = 
+        let rec mergeExec l r = 
+            match l, r with
+            | [], r -> r
+            | l, [] -> l
+            | x :: xs, y :: ys -> 
+                if x < y then x :: mergeExec xs r
+                else y :: mergeExec l ys
+        mergeExec l r
     
     let rec split = 
         function 
@@ -52,47 +54,28 @@ module hw =
         | _ -> 
             let left, right = split list
             //                List.splitAt (List.length list / 2) list
-            merge (mergesort left, mergesort right)
+            merge (mergesort left) (mergesort right)
     
     //4
     type Expression = 
-        | Value of int
+        | Val of int
         | Add of Expression * Expression
-        | Multiply of Expression * Expression
+        | Mul of Expression * Expression
         | Div of Expression * Expression
         | Sub of Expression * Expression
         | Mod of Expression * Expression
     
     let rec exec = 
         function 
-        | Value n -> n
+        | Val n -> n
         | Add(x, y) -> exec x + exec y
-        | Multiply(x, y) -> exec x * exec y
+        | Mul(x, y) -> exec x * exec y
         | Div(x, y) -> 
             match (x, exec y) with
             | _, 0 -> failwith ("divide  by zero")
             | _, b -> exec x / b
         | Sub(x, y) -> exec x - exec y
         | Mod(x, y) -> exec x % exec y
-    
-    //4 version 2
-    type Expr<'a, 'b> = 
-        | Expr of Expr<'a, 'b> * 'a * Expr<'a, 'b>
-        | Val of 'b
-    
-    let rec calculate T = 
-        match T with
-        | Expr(left, op, right) -> 
-            match op with
-            | '+' -> calculate left + calculate right
-            | '-' -> calculate left - calculate right
-            | '*' -> calculate left * calculate right
-            | '/' -> 
-                let checkZero = calculate right
-                if (checkZero = 0) then failwith ("divide  by zero")
-                else calculate left / checkZero
-            | _ -> failwith ("Invalid operation")
-        | Val x -> x
     
     //5
     let rec isPrime x = 
@@ -128,24 +111,13 @@ module Tests =
         assert (mergesort [ 2, 1 ] = [ 1, 2 ])
         assert (mergesort [ 1000..1 ] = [ 1..1000 ])
         //4
-        let addTree = Add(Value 1, Value 2)
+        let addTree = Add(Val 1, Val 2)
         assert (exec addTree = 3)
-        let addTree = Add(Value 1, Multiply(Value 2, Value 2))
+        let addTree = Add(Val 1, Mul(Val 2, Val 2))
         assert (exec addTree = 5)
-        let addTree = Add(Div(Value 6, Value 3), Multiply(Value 2, Value 2))
+        let addTree = Add(Div(Val 6, Val 3), Mul(Val 2, Val 2))
         assert (exec addTree = 6)
-        let testTree0 = Expr(Expr(Val 2, '+', Val 3), '*', Expr(Val 3, '+', Val 2))
-        assert (calculate testTree0 = 36)
-        let testTree1 = Expr(Expr(Val 2, '+', Val 3), '/', Expr(Val 2, '-', Val 2))
-        try 
-            printf "%d\n" (calculate testTree1)
-        with Failure(msg) -> printfn "%s" msg
-        let testTree2 = Expr(Expr(Val 2, '+', Val 3), '*', Expr(Val 3, '-', Expr(Val 2, '+', Val 100)))
-        assert (calculate testTree2 = 6 * (3 - 2 + 100))
-        let testTree3 = Expr(Val 2, '.', Val 3)
-        try 
-            printf "%d\n" (calculate testTree3)
-        with Failure(msg) -> printfn "%s" msg
+
         //5
         printfn "Prime %A" primes
         printfn "Prime %A" primes1
